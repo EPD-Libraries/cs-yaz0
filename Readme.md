@@ -6,5 +6,5 @@ C# bindings for [syaz0](https://github.com/EPD-Libraries/syaz0)
 
 | Method     |      Mean |     Error |    StdDev |     Gen0 |     Gen1 |     Gen2 | Allocated |
 | ---------- | --------: | --------: | --------: | -------: | -------: | -------: | --------: |
-| Compress   | 40.634 ms | 0.3524 ms | 0.3124 ms |        - |        - |        - |     521 B |
-| Decompress |  1.182 ms | 0.0102 ms | 0.0095 ms | 199.2188 | 199.2188 | 199.2188 | 1048474 B |
+| Compress   | 12.830 ms | 0.0462 ms | 0.0432 ms |        - |        - |        - |     131 B |
+| Decompress |  1.171 ms | 0.0069 ms | 0.0057 ms | 197.2656 | 197.2656 | 197.2656 | 1048474 B |
