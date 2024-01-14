@@ -8,20 +8,17 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Content Condition="Exists('../../native/build/Yaz0.so')"
-                 Include="../../native/build/Yaz0.so"
+        <Content Include="../../native/build/Yaz0.so"
                  Link="Lib/Yaz0.so"
                  TargetPath="runtimes/linux-x64/native/Yaz0.so"
                  PackagePath="runtimes/linux-x64/native"
                  CopyToOutputDirectory="PreserveNewest" />
-        <Content Condition="Exists('../../native/build/Yaz0.dll')"
-                 Include="../../native/build/Yaz0.dll"
+        <Content Include="../../native/build/Yaz0.dll"
                  Link="Lib/Yaz0.dll"
                  TargetPath="runtimes/win-x64/native/Yaz0.dll"
                  PackagePath="runtimes/win-x64/native"
                  CopyToOutputDirectory="PreserveNewest" />
-        <Content Condition="Exists('../../native/build/Yaz0.dylib')"
-                 Include="../../native/build/Yaz0.dylib"
+        <Content Include="../../native/build/Yaz0.dylib"
                  Link="Lib/Yaz0.dylib"
                  TargetPath="runtimes/osx/native/Yaz0.dylib"
                  PackagePath="runtimes/osx/native"
