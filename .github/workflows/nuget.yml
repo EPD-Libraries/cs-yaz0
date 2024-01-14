@@ -60,6 +60,7 @@ jobs:
 
   # Deploy to NuGet
   deploy:
+    needs: build
     name: Deploy to NuGet
     runs-on: ubuntu-latest
     steps:
