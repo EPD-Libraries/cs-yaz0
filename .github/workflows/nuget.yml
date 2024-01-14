@@ -30,12 +30,12 @@ jobs:
       - name: Configure CMake
         shell: bash
         run: |-
-          cmake --no-warn-unused-cli                \
-          -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE \
-          -DCMAKE_BUILD_TYPE:STRING=Release         \
-          -S native                                 \
-          -B native/build/                          \
-          -G "Ninja"                                \
+          cmake --no-warn-unused-cli           \
+          -DCMAKE_EXPORT_COMPILE_COMMANDS=TRUE \
+          -DCMAKE_BUILD_TYPE=Release           \
+          -S native                            \
+          -B native/build/                     \
+          -G "Ninja"                           \
 
       - name: Build CMake
         shell: bash
