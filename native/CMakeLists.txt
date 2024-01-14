@@ -19,6 +19,9 @@ elseif("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
 endif()
 
 add_library(${TARGET} SHARED
+    ./src/include/cs_vector.h
+    ./src/cs_vector.cpp
+
     ./src/include/cs_yaz0.h
     ./src/cs_yaz0.cpp
 )
