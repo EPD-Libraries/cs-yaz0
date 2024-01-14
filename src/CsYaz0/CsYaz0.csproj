@@ -13,4 +13,18 @@
     <Content Include="..\..\native\build\Yaz0.dylib" Link="Lib\Yaz0.dylib" Condition="Exists('..\..\native\build\Yaz0.dylib')" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="../../Icon.png" Link="Assets\Icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../Readme.md" Link="Assets\Readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
 </Project>
