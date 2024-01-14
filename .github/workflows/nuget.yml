@@ -19,11 +19,11 @@ jobs:
             lib: Yaz0.dll
     runs-on: ${{ matrix.config.os }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - name: get-cmake
         uses: lukka/get-cmake@v3.28.1
-
-      - name: Check
-        run: ls -R
 
       - name: Configure CMake
         shell: bash
