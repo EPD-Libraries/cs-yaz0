@@ -55,7 +55,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Yaz0-${{ matrix.config.os }}
+          name: ${{ matrix.config.lib }}
           path: ./native/build/${{ matrix.config.lib }}
 
   # Deploy to NuGet
@@ -65,6 +65,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Get Native Builds
+        uses: actions/download-artifact@v4
+        with:
+          path: ./native/build
+          pattern: Yaz0*
+          merge-multiple: true
+
+      - name: Check
+        run: ls -R
 
       - name: Install .NET
         uses: actions/setup-dotnet@v1
