@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\native\build\Yaz0.so" Link="Lib\Yaz0.so" Condition="Exists('..\..\native\build\Yaz0.so')" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\native\build\Yaz0.dll" Link="Lib\Yaz0.dll" Condition="Exists('..\..\native\build\Yaz0.dll')" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="..\..\native\build\Yaz0.dylib" Link="Lib\Yaz0.dylib" Condition="Exists('..\..\native\build\Yaz0.dylib')" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
