@@ -6,6 +6,8 @@ namespace CsYaz0;
 
 public unsafe static partial class Yaz0
 {
+    public const uint MAGIC = 0x307A6159;
+
     public static DataMarshal Compress(ReadOnlySpan<byte> src, uint alignment = 0, int level = 7)
     {
         fixed (byte* src_ptr = src) {
@@ -23,6 +25,12 @@ public unsafe static partial class Yaz0
 
     public static void Decompress(ReadOnlySpan<byte> src, Span<byte> dst)
     {
+        if (MemoryMarshal.Cast<byte, uint>(src[0..4])[0] != MAGIC) {
+            throw new InvalidOperationException("""
+                Invalid Yaz0 magic
+                """);
+        }
+
         int src_it = 16;
         int dst_it = 0;
 
