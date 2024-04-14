@@ -15,10 +15,14 @@ public unsafe static partial class Yaz0
         }
     }
 
+    public static int GetDecompressedSize(ReadOnlySpan<byte> data)
+    {
+        return BinaryPrimitives.ReverseEndianness(MemoryMarshal.Read<int>(data[4..8]));
+    }
+
     public static byte[] Decompress(ReadOnlySpan<byte> data)
     {
-        uint bufferSize = BinaryPrimitives.ReverseEndianness(MemoryMarshal.Read<uint>(data[4..8]));
-        byte[] result = new byte[bufferSize];
+        byte[] result = new byte[GetDecompressedSize(data)];
         Decompress(data, result);
         return result;
     }
